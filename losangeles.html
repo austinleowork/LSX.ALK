@@ -34,6 +34,31 @@
   .mark.tl{top:26px;left:28px}
   .mark.tr{top:26px;right:28px}
 
+  /* the other two places, so you can move sideways without going home */
+  .cities{
+    position:absolute;left:0;right:0;
+    bottom:max(34px, calc(env(safe-area-inset-bottom) + 6px));
+    display:flex;justify-content:center;align-items:center;
+    gap:clamp(16px, 5vw, 46px);
+    z-index:4;
+    opacity:0;animation:rise 1.8s cubic-bezier(.16,1,.3,1) 1.55s forwards;
+  }
+  .cities a{
+    pointer-events:auto;cursor:pointer;text-decoration:none;
+    font-size:clamp(9px, 2.6vw, 10.5px);
+    letter-spacing:.3em;text-transform:uppercase;text-indent:.3em;
+    color:rgba(255,255,255,.20);
+    padding:8px 2px;margin:-8px 0;white-space:nowrap;
+    transition:color .4s ease, letter-spacing .4s cubic-bezier(.16,1,.3,1);
+  }
+  .cities a:hover,.cities a:focus-visible{
+    color:rgba(255,255,255,.78);letter-spacing:.38em;outline:none;
+  }
+  .cities .dot{
+    width:2px;height:2px;border-radius:50%;flex:none;
+    background:rgba(255,255,255,.16);
+  }
+
   #back{
     pointer-events:auto;cursor:pointer;background:none;border:0;padding:6px 8px;
     margin:-6px -8px;font:inherit;letter-spacing:.28em;text-transform:uppercase;
@@ -55,11 +80,11 @@
   .ring.on{opacity:1}
   .ring.down{width:15px;height:15px;margin:-7.5px 0 0 -7.5px;border-color:rgba(255,255,255,.8)}
   html.fine, html.fine body{cursor:none}
-  html.fine #back{cursor:none}
+  html.fine #back, html.fine .cities a{cursor:none}
   html.coarse .ring{display:none}
 
   .hint{
-    position:absolute;left:0;right:0;bottom:max(30px, calc(env(safe-area-inset-bottom) + 2px));
+    position:absolute;left:0;right:0;bottom:max(74px, calc(env(safe-area-inset-bottom) + 46px));
     text-align:center;
     font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;
     color:rgba(255,255,255,.13);
@@ -91,6 +116,13 @@
 <div class="mark tl mono"><a id="back" class="mono" href="./" aria-label="back"><span class="arrow">&lsaquo;</span>index</a></div>
 <div class="mark tr mono">mmxxvi</div>
 <div class="hint mono" id="hint">scatter it</div>
+
+<nav class="cities mono" aria-label="places">
+  <a href="vegas.html">las vegas</a>
+  <i class="dot"></i>
+  <a href="vancouver.html">vancouver</a>
+</nav>
+
 <div class="ring" id="ring"></div>
 
 <script>
