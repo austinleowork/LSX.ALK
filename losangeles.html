@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>@austinle0</title>
-<meta name="theme-color" content="#f6f6f7">
+<meta name="theme-color" content="#000000">
 <meta name="description" content="austinle0">
 <meta property="og:title" content="@austinle0">
 <meta property="og:description" content="austinle0">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='%23141414'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ffffff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='%23ffffff'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23ffffff'/%3E%3C/svg%3E">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{
-    height:100%;width:100%;overflow:hidden;background:#f6f6f7;
+    height:100%;width:100%;overflow:hidden;background:#000000;
     -webkit-font-smoothing:antialiased;
     -webkit-tap-highlight-color:transparent;
     overscroll-behavior:none;
@@ -26,7 +26,7 @@
   .mark{
     position:absolute;
     font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;
-    color:rgba(0,0,0,.16);
+    color:rgba(255,255,255,.16);
     user-select:none;pointer-events:none;
     opacity:0;animation:rise 1.6s cubic-bezier(.16,1,.3,1) 1.35s forwards;
     z-index:4;
@@ -47,25 +47,25 @@
     pointer-events:auto;cursor:pointer;text-decoration:none;
     font-size:clamp(9px, 2.6vw, 10.5px);
     letter-spacing:.3em;text-transform:uppercase;text-indent:.3em;
-    color:rgba(0,0,0,.20);
+    color:rgba(255,255,255,.20);
     padding:8px 2px;margin:-8px 0;white-space:nowrap;
     transition:color .4s ease, letter-spacing .4s cubic-bezier(.16,1,.3,1);
   }
   .cities a:hover,.cities a:focus-visible{
-    color:rgba(0,0,0,.78);letter-spacing:.38em;outline:none;
+    color:rgba(255,255,255,.78);letter-spacing:.38em;outline:none;
   }
   .cities .dot{
     width:2px;height:2px;border-radius:50%;flex:none;
-    background:rgba(0,0,0,.16);
+    background:rgba(255,255,255,.16);
   }
 
   #back{
     pointer-events:auto;cursor:pointer;background:none;border:0;padding:6px 8px;
     margin:-6px -8px;font:inherit;letter-spacing:.28em;text-transform:uppercase;
-    font-size:9.5px;color:rgba(0,0,0,.16);text-decoration:none;
+    font-size:9.5px;color:rgba(255,255,255,.16);text-decoration:none;
     transition:color .35s ease;display:inline-block;
   }
-  #back:hover,#back:focus-visible{color:rgba(0,0,0,.66);outline:none}
+  #back:hover,#back:focus-visible{color:rgba(255,255,255,.66);outline:none}
   #back .arrow{opacity:.5;margin-right:.7em;display:inline-block;transition:transform .35s cubic-bezier(.16,1,.3,1)}
   #back:hover .arrow{transform:translateX(-3px)}
   @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -87,7 +87,7 @@
     position:absolute;left:0;right:0;bottom:max(74px, calc(env(safe-area-inset-bottom) + 46px));
     text-align:center;
     font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;
-    color:rgba(0,0,0,.13);
+    color:rgba(255,255,255,.13);
     user-select:none;pointer-events:none;z-index:3;
     opacity:0;animation:rise 1.6s cubic-bezier(.16,1,.3,1) 1.9s forwards;
     transition:opacity .7s ease;text-indent:.3em;
@@ -96,13 +96,13 @@
 
   .fallback{
     position:absolute;inset:0;display:none;place-items:center;
-    background:#f6f6f7;z-index:1;
+    background:#000000;z-index:1;
   }
   html.nogl .fallback{display:grid}
   html.nogl canvas{display:none}
   .fallback i{
     display:block;width:min(46vmin,320px);aspect-ratio:1;border-radius:50%;
-    background:radial-gradient(46% 40% at 36% 28%, rgba(0,0,0,.20) 0%, transparent 62%);
+    background:radial-gradient(46% 40% at 36% 28%, rgba(255,255,255,.20) 0%, transparent 62%);
   }
 </style>
 </head>
@@ -149,7 +149,7 @@ var CARPTS = "YpWhaby6lk5FS/mwM22R/2DVktjV1T+Q1b2SVEdAx7y29HWdztvJ30mqlf+Sz9C8dJ
   var SECRET = "LOS ANGELES";                  /* the hidden line -- edit here */
 
   try {
-    console.log("%c" + SECRET, "color:#3a3a3a;font:12px ui-monospace,monospace;letter-spacing:.3em");
+    console.log("%c" + SECRET, "color:#e6e8ec;font:12px ui-monospace,monospace;letter-spacing:.3em");
   } catch (e) {}
 
   /* ================================================================== */
@@ -233,7 +233,7 @@ var CARPTS = "YpWhaby6lk5FS/mwM22R/2DVktjV1T+Q1b2SVEdAx7y29HWdztvJ30mqlf+Sz9C8dJ
     "uniform float u_intro;",
     "void main(){",
     "  float a = 1.0 - smoothstep(0.08, 0.5, length(gl_PointCoord - 0.5));",
-    "  vec3 c = mix(vec3(0.58,0.58,0.61), vec3(0.02,0.02,0.03), v_s);",
+    "  vec3 c = mix(vec3(0.66,0.68,0.72), vec3(1.0,1.0,1.0), v_s);",
     "  gl_FragColor = vec4(c, a*u_intro*0.92);",
     "}"
   ].join("\n");
@@ -390,7 +390,7 @@ var CARPTS = "YpWhaby6lk5FS/mwM22R/2DVktjV1T+Q1b2SVEdAx7y29HWdztvJ30mqlf+Sz9C8dJ
       ppos[i*2+1] = y + pvy[i]*dt;
     }
 
-    gl.clearColor(0.965, 0.965, 0.970, 1.0);
+    gl.clearColor(0.006, 0.006, 0.007, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.useProgram(PROG);
     gl.enable(gl.BLEND);
